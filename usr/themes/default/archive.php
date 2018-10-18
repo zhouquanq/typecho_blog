@@ -1,19 +1,19 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
-
     <div class="col-mb-12 col-8" id="main" role="main">
         <h3 class="archive-title"><?php $this->archiveTitle(array(
-            'category'  =>  _t('分类 %s 下的文章'),
+            // 'category'  =>  _t('分类 %s 下的文章'),
+            'category'  =>  _t($this->getDescription()),
             'search'    =>  _t('包含关键字 %s 的文章'),
             'tag'       =>  _t('标签 %s 下的文章'),
             'author'    =>  _t('%s 发布的文章')
         ), '', ''); ?></h3>
         <?php if ($this->have()): ?>
         <?php while($this->next()): ?>
-            <!-- http://schema.org/BlogPosting -->
-            <article class="post" itemscope itemtype="" style="background:#fff;border:2px solid #f3f3f3;margin:2.0em 0em;padding:1.0em 1.5em;border-radius:2px;">
-                <?php if($this->is('category','心情')){ ?>
-                <h2 class="post-title" itemprop="name headline"><a itemprop="url" href="javascript:void(0)"><?php $this->title() ?></a></h2>
+            
+            <article class="post" itemscope itemtype="http://schema.org/BlogPosting" style="background:#fff;border:2px solid #f3f3f3;margin:2.0em 0em;padding:1.0em 1.5em;border-radius:2px;">
+                <?php if($this->is('category','diary')){ ?>
+                <h2 class="post-title" itemprop="name headline" style="color:#3354AA"><?php $this->title() ?></h2>
                 <?php }else{ ?>
                 <h2 class="post-title" itemprop="name headline"><a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
                 <?php } ?>

@@ -58,9 +58,13 @@
                     <?php while($pages->next()): ?>
                     <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
                     <?php endwhile; ?> -->
-                    <?php $this->widget('Widget_Metas_Category_List')->to($pages); ?>
+                    <?php $this->widget('Widget_Metas_Category_List')->to($category); ?>
+                    <?php while($category->next()): ?>
+                    <a<?php if($this->is('category', $category->slug)): ?> class="current"<?php endif; ?> href="<?php $category->permalink(); ?>" title="<?php $category->name(); ?>"><?php $category->name(); ?></a>
+                    <?php endwhile; ?>
+                    <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
                     <?php while($pages->next()): ?>
-                    <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->name(); ?>"><?php $pages->name(); ?></a>
+                    <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
                     <?php endwhile; ?>
                 </nav>
             </div>
