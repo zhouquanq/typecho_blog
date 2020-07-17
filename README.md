@@ -2,6 +2,6 @@
 
 ## typecho 博客
 
-### 面样式的优化借鉴于:[zmk.ink 汁墨ㆍ客](https://zmk.ink/)
+### 面样式的优化借鉴于 : [zmk.ink 汁墨ㆍ客](https://zmk.ink/)
 
-### 博客地址:[zhouqq](http://www.zhouqq.com/)
+### 博客地址 : [zhouqq](http://www.zhouqq.com/)
